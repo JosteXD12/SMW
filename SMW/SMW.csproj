@@ -93,6 +93,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Models\DALEstudiante.cs" />
+    <Compile Include="Models\DALGrupo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -100,6 +102,8 @@
     <Compile Include="Models\DALHorario.cs" />
     <Compile Include="Models\DALMatricula.cs" />
     <Compile Include="Models\DALProfesor.cs" />
+    <Compile Include="Models\DLAAula.cs" />
+    <Compile Include="Models\DLACurso.cs" />
     <Compile Include="Models\EntidadAula.cs" />
     <Compile Include="Models\EntidadCurso.cs" />
     <Compile Include="Models\EntidadEstudiante.cs" />
