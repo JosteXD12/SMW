@@ -24,7 +24,7 @@ public class DALProfesor
         cmd.Parameters.Add(new SqlParameter("@Profesor_telefono", elProfesor.Profesor_telefono));
         cmd.Parameters.Add(new SqlParameter("@Profesor_correoElectronico", elProfesor.Profesor_correoElectronico));
         cmd.Parameters.Add(new SqlParameter("@Profesor_dirreccion", elProfesor.Profesor_dirreccion));
-        cmd.Parameters.Add(new SqlParameter("@Profesor_estado", elProfesor.Profesor_dirreccion));
+        cmd.Parameters.Add(new SqlParameter("@Profesor_estado", elProfesor.Profesor_estado));
 
         int x = cmd.ExecuteNonQuery();
         aux.conectar();
@@ -58,7 +58,7 @@ public class DALProfesor
         cmd.Parameters.Add(new SqlParameter("@Profesor_telefono", elProfesor.Profesor_telefono));
         cmd.Parameters.Add(new SqlParameter("@Profesor_correoElectronico", elProfesor.Profesor_correoElectronico));
         cmd.Parameters.Add(new SqlParameter("@Profesor_dirreccion", elProfesor.Profesor_dirreccion));
-        cmd.Parameters.Add(new SqlParameter("@Profesor_estado", elProfesor.Profesor_dirreccion));
+        cmd.Parameters.Add(new SqlParameter("@Profesor_estado", elProfesor.Profesor_estado));
 
         cmd.ExecuteNonQuery();
         aux.conectar();

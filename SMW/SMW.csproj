@@ -97,6 +97,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Conectividad.cs" />
+    <Compile Include="Models\DALHorario.cs" />
     <Compile Include="Models\DALMatricula.cs" />
     <Compile Include="Models\DALProfesor.cs" />
     <Compile Include="Models\EntidadAula.cs" />
