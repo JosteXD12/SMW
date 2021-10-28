@@ -88,11 +88,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\ProfesorController.cs" />
     <Compile Include="Models\DALEstudiante.cs" />
     <Compile Include="Models\DALGrupo.cs" />
     <Compile Include="Global.asax.cs">
@@ -116,6 +119,11 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Profesor\InsertarProfesor.cshtml" />
+    <Content Include="Views\Profesor\modificarProfesor.cshtml" />
+    <Content Include="Views\Profesor\Listado.cshtml" />
+    <Content Include="Views\Profesor\ListadoInactivosProfesor.cshtml" />
+    <Content Include="Views\Estudiante\EstudianteListado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -125,7 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Script\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -23,7 +23,7 @@ public class DALProfesor
         cmd.Parameters.Add(new SqlParameter("@Profesor_segundoApellido", elProfesor.Profesor_segundoApellido));
         cmd.Parameters.Add(new SqlParameter("@Profesor_telefono", elProfesor.Profesor_telefono));
         cmd.Parameters.Add(new SqlParameter("@Profesor_correoElectronico", elProfesor.Profesor_correoElectronico));
-        cmd.Parameters.Add(new SqlParameter("@Profesor_dirreccion", elProfesor.Profesor_dirreccion));
+        cmd.Parameters.Add(new SqlParameter("@Profesor_direccion", elProfesor.Profesor_dirreccion));
         cmd.Parameters.Add(new SqlParameter("@Profesor_estado", elProfesor.Profesor_estado));
 
         int x = cmd.ExecuteNonQuery();
@@ -57,10 +57,10 @@ public class DALProfesor
         cmd.Parameters.Add(new SqlParameter("@Profesor_segundoApellido", elProfesor.Profesor_segundoApellido));
         cmd.Parameters.Add(new SqlParameter("@Profesor_telefono", elProfesor.Profesor_telefono));
         cmd.Parameters.Add(new SqlParameter("@Profesor_correoElectronico", elProfesor.Profesor_correoElectronico));
-        cmd.Parameters.Add(new SqlParameter("@Profesor_dirreccion", elProfesor.Profesor_dirreccion));
-        cmd.Parameters.Add(new SqlParameter("@Profesor_estado", elProfesor.Profesor_estado));
+        cmd.Parameters.Add(new SqlParameter("@Profesor_direccion", elProfesor.Profesor_dirreccion));
+        cmd.Parameters.Add(new SqlParameter("@Profesor_estado", 'A'));
 
-        cmd.ExecuteNonQuery();
+        int x = cmd.ExecuteNonQuery();
         aux.conectar();
     }
 
@@ -112,6 +112,7 @@ public class DALProfesor
         }
 
     }
+ 
     public EntidadProfesor ConsultarProfesor(int Profesor_id)
     {
         EntidadProfesor elProfesor = new EntidadProfesor();
@@ -208,7 +209,7 @@ public class DALProfesor
             elProfesor.Profesor_segundoApellido = dr["Profesor_segundoApellido"].ToString();
             elProfesor.Profesor_telefono = dr["Profesor_telefono"].ToString();
             elProfesor.Profesor_correoElectronico = dr["Profesor_correoElectronico"].ToString();
-            elProfesor.Profesor_dirreccion = dr["Profesor_dirreccion"].ToString();
+            elProfesor.Profesor_dirreccion = dr["Profesor_direccion"].ToString();
             elProfesor.Profesor_estado = dr["Profesor_estado"].ToString();
 
             lista.Add(elProfesor);
@@ -241,7 +242,7 @@ public class DALProfesor
             elProfesor.Profesor_segundoApellido = dr["Profesor_segundoApellido"].ToString();
             elProfesor.Profesor_telefono = dr["Profesor_telefono"].ToString();
             elProfesor.Profesor_correoElectronico = dr["Profesor_correoElectronico"].ToString();
-            elProfesor.Profesor_dirreccion = dr["Profesor_dirreccion"].ToString();
+            elProfesor.Profesor_dirreccion = dr["Profesor_direccion"].ToString();
             elProfesor.Profesor_estado = dr["Profesor_estado"].ToString();
 
             lista.Add(elProfesor);

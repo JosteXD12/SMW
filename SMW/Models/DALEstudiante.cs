@@ -192,7 +192,7 @@ public class DALEstudiante
 
         cmd.Connection = aux.conectar();
 
-        cmd.CommandText = "ListarEstudiante";
+        cmd.CommandText = "ListarEstudiantes";
         cmd.CommandType = CommandType.StoredProcedure;
 
         SqlDataReader dr = cmd.ExecuteReader();
@@ -211,7 +211,7 @@ public class DALEstudiante
             elEstudiante.Estudiante_segundoApellido = dr["Estudiante_segundoApellido"].ToString();
             elEstudiante.Estudiante_telefono = dr["Estudiante_telefono"].ToString();
             elEstudiante.Estudiante_correoElectronico = dr["Estudiante_correoElectronico"].ToString();
-            elEstudiante.Estudiante_dirreccion = dr["Estudiante_dirreccion"].ToString();
+            elEstudiante.Estudiante_dirreccion = dr["Estudiante_direccion"].ToString();
             elEstudiante.Estudiante_estado = dr["Estudiante_estado"].ToString();
 
             lista.Add(elEstudiante);
@@ -219,7 +219,7 @@ public class DALEstudiante
         aux.conectar();
         return lista;
     }
-    public List<EntidadEstudiante> ListarIncativoProfesor()
+    public List<EntidadEstudiante> ListarIncativoEstudiante()
     {
         Conectividad aux = new Conectividad();
         SqlCommand cmd = new SqlCommand();
