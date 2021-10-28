@@ -124,6 +124,9 @@
     <Content Include="Views\Profesor\Listado.cshtml" />
     <Content Include="Views\Profesor\ListadoInactivosProfesor.cshtml" />
     <Content Include="Views\Estudiante\EstudianteListado.cshtml" />
+    <Content Include="Views\Estudiante\InsertarEstudiante.cshtml" />
+    <Content Include="Views\Estudiante\modificarEstudiante.cshtml" />
+    <Content Include="Views\Estudiante\ListadoInactivosEstudiante.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

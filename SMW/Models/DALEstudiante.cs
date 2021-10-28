@@ -25,11 +25,11 @@ public class DALEstudiante
         cmd.Parameters.Add(new SqlParameter("@Estudiante_segundoApellido", elEstudiante.Estudiante_segundoApellido));
         cmd.Parameters.Add(new SqlParameter("@Estudiante_telefono", elEstudiante.Estudiante_telefono));
         cmd.Parameters.Add(new SqlParameter("@Estudiante_correoElectronico", elEstudiante.Estudiante_correoElectronico));
-        cmd.Parameters.Add(new SqlParameter("@Estudiante_dirreccion", elEstudiante.Estudiante_dirreccion));
-        cmd.Parameters.Add(new SqlParameter("@Estudiante_estado", elEstudiante.Estudiante_estado));
+        cmd.Parameters.Add(new SqlParameter("@Estudiante_direccion", elEstudiante.Estudiante_dirreccion));
+        cmd.Parameters.Add(new SqlParameter("@Estudiante_estado", 'A'));
 
         int x = cmd.ExecuteNonQuery();
-        aux.conectar();
+        aux.conectar(); 
 
         if (x >= 1)
         {
@@ -59,10 +59,10 @@ public class DALEstudiante
         cmd.Parameters.Add(new SqlParameter("@Estudiante_segundoApellido", elEstudiante.Estudiante_segundoApellido));
         cmd.Parameters.Add(new SqlParameter("@Estudiante_telefono", elEstudiante.Estudiante_telefono));
         cmd.Parameters.Add(new SqlParameter("@Estudiante_correoElectronico", elEstudiante.Estudiante_correoElectronico));
-        cmd.Parameters.Add(new SqlParameter("@Estudiante_dirreccion", elEstudiante.Estudiante_dirreccion));
-        cmd.Parameters.Add(new SqlParameter("@Estudiante_estado", elEstudiante.Estudiante_estado));
+        cmd.Parameters.Add(new SqlParameter("@Estudiante_direccion", elEstudiante.Estudiante_dirreccion));
+        cmd.Parameters.Add(new SqlParameter("@Estudiante_estado", 'A'));
 
-        cmd.ExecuteNonQuery();
+        int x =cmd.ExecuteNonQuery();
         aux.conectar();
     }
     public Boolean EliminarEstudiante(int Estudiante_id)
@@ -95,7 +95,7 @@ public class DALEstudiante
 
         cmd.Connection = aux.conectar();
 
-        cmd.CommandText = "InactivarProfesor";
+        cmd.CommandText = "InactivarEstudiante";
         cmd.CommandType = CommandType.StoredProcedure;
 
         cmd.Parameters.Add(new SqlParameter("@Estudiante_id", Estudiante_id));
@@ -226,7 +226,7 @@ public class DALEstudiante
 
         cmd.Connection = aux.conectar();
 
-        cmd.CommandText = "ListarInactivoProfesor";
+        cmd.CommandText = "ListarInactivoEstudiantes";
         cmd.CommandType = CommandType.StoredProcedure;
 
         SqlDataReader dr = cmd.ExecuteReader();
@@ -245,7 +245,7 @@ public class DALEstudiante
             elEstudiante.Estudiante_segundoApellido = dr["Estudiante_segundoApellido"].ToString();
             elEstudiante.Estudiante_telefono = dr["Estudiante_telefono"].ToString();
             elEstudiante.Estudiante_correoElectronico = dr["Estudiante_correoElectronico"].ToString();
-            elEstudiante.Estudiante_dirreccion = dr["Estudiante_dirreccion"].ToString();
+            elEstudiante.Estudiante_dirreccion = dr["Estudiante_direccion"].ToString();
             elEstudiante.Estudiante_estado = dr["Estudiante_estado"].ToString();
 
             lista.Add(elEstudiante);

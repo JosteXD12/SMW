@@ -15,17 +15,17 @@ namespace SMW.Controllers
             ModelState.Clear();
 
             return View(ObjEstudiante.ListarEstudiante());
-           
+
         }
-        public ActionResult InsertarEstudiante(EntidadEstudiante estudiante)
+        public ActionResult InsertarEstudiante(EntidadEstudiante Estudiante)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    DALEstudiante ObjProfesor = new DALEstudiante();
+                    DALEstudiante ObjEstudiante = new DALEstudiante();
 
-                    if (ObjProfesor.insertarEstudiante(estudiante))
+                    if (ObjEstudiante.insertarEstudiante(Estudiante))
                     {
                         ViewBag.Mensaje = "Estudiante a sido ingresado con éxto";
                     }
@@ -50,11 +50,11 @@ namespace SMW.Controllers
         }
 
         [HttpPost]
-        public ActionResult modificarEstudiante(int Estudiante_id, EntidadEstudiante estudiante)
+        public ActionResult modificarEstudiante(int Estudiante_id, EntidadEstudiante Estudiante)
         {
             DALEstudiante ObjEstudiante = new DALEstudiante();
 
-            ObjEstudiante.ModificarEstudiante(estudiante);
+            ObjEstudiante.ModificarEstudiante(Estudiante);
 
             return RedirectToAction("EstudianteListado");
 
@@ -98,7 +98,7 @@ namespace SMW.Controllers
                     ViewBag.Mensaje = "Hubo problemas al eliminar el Estudiante";
                 }
 
-                return RedirectToAction("EstudianteListado");
+                return RedirectToAction("ListadoInactivosEstudiante");
 
             }
             catch
@@ -107,6 +107,7 @@ namespace SMW.Controllers
             }
 
         }
+
         public ActionResult ListadoInactivosEstudiante()
         {
             DALEstudiante ObjEstudiante = new DALEstudiante();
@@ -114,7 +115,7 @@ namespace SMW.Controllers
 
             return View(ObjEstudiante.ListarIncativoEstudiante());
         }
-        public ActionResult ActivarProfesor(int Estudiante_id)
+        public ActionResult ActivarEstudiante(int Estudiante_id)
         {
             DALEstudiante ObjEstudiante = new DALEstudiante();
             ModelState.Clear();
