@@ -19,7 +19,7 @@ public class DLAAula
 
         cmd.Parameters.Add(new SqlParameter("@Aula_descripcion", laAula.Aula_descripcion));
         cmd.Parameters.Add(new SqlParameter("@Aula_capacidad", laAula.Aula_capacidad));
-        cmd.Parameters.Add(new SqlParameter("@Aula_estado", laAula.Aula_Estado));
+        cmd.Parameters.Add(new SqlParameter("@Aula_estado", 'A'));
 
         int x = cmd.ExecuteNonQuery();
         aux.conectar();
@@ -47,9 +47,9 @@ public class DLAAula
         cmd.Parameters.Add(new SqlParameter("@Aula_id", laAula.Aula_id));
         cmd.Parameters.Add(new SqlParameter("@Aula_descripcion", laAula.Aula_descripcion));
         cmd.Parameters.Add(new SqlParameter("@Aula_capacidad", laAula.Aula_capacidad));
-        cmd.Parameters.Add(new SqlParameter("@Aula_estado", laAula.Aula_Estado));
+        cmd.Parameters.Add(new SqlParameter("@Aula_estado", 'A'));
 
-        cmd.ExecuteNonQuery();
+        int x = cmd.ExecuteNonQuery();
         aux.conectar();
     }
     public Boolean EliminarAula(int Aula_id)
@@ -129,7 +129,7 @@ public class DLAAula
         aux.conectar();
         return laAula;
     }
-    public EntidadAula ActivarProfesor(int Aula_id)
+    public EntidadAula ActivarAula(int Aula_id)
     {
         EntidadAula laAula = new EntidadAula();
         Conectividad aux = new Conectividad();
@@ -178,7 +178,7 @@ public class DLAAula
 
             laAula.Aula_id = int.Parse(dr["Aula_id"].ToString());
             laAula.Aula_descripcion = dr["Aula_descripcion"].ToString();
-            laAula.Aula_capacidad = dr["Profesor_capacidad"].ToString();
+            laAula.Aula_capacidad = dr["Aula_capacidad"].ToString();
             laAula.Aula_Estado = dr["Aula_estado"].ToString();
 
             lista.Add(laAula);
@@ -206,7 +206,7 @@ public class DLAAula
 
             laAula.Aula_id = int.Parse(dr["Aula_id"].ToString());
             laAula.Aula_descripcion = dr["Aula_descripcion"].ToString();
-            laAula.Aula_capacidad = dr["Profesor_capacidad"].ToString();
+            laAula.Aula_capacidad = dr["Aula_capacidad"].ToString();
             laAula.Aula_Estado = dr["Aula_estado"].ToString();
 
             lista.Add(laAula);

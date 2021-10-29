@@ -94,7 +94,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AulaController.cs" />
+    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\GrupoController.cs" />
+    <Compile Include="Controllers\HorarioController.cs" />
     <Compile Include="Controllers\ProfesorController.cs" />
     <Compile Include="Models\DALEstudiante.cs" />
     <Compile Include="Models\DALGrupo.cs" />
@@ -127,6 +131,22 @@
     <Content Include="Views\Estudiante\InsertarEstudiante.cshtml" />
     <Content Include="Views\Estudiante\modificarEstudiante.cshtml" />
     <Content Include="Views\Estudiante\ListadoInactivosEstudiante.cshtml" />
+    <Content Include="Views\Horario\HorarioListado.cshtml" />
+    <Content Include="Views\Horario\ListadoInactivosHorario.cshtml" />
+    <Content Include="Views\Horario\insertarhorario.cshtml" />
+    <Content Include="Views\Horario\modificarHorario.cshtml" />
+    <Content Include="Views\Curso\CursoListado.cshtml" />
+    <Content Include="Views\Curso\ListadoInactivosCurso.cshtml" />
+    <Content Include="Views\Curso\InsertarCurso.cshtml" />
+    <Content Include="Views\Curso\modificarCurso.cshtml" />
+    <Content Include="Views\Aula\AulaListado.cshtml" />
+    <Content Include="Views\Aula\ListadoInactivosAula.cshtml" />
+    <Content Include="Views\Aula\InsertarAula.cshtml" />
+    <Content Include="Views\Aula\modificarAula.cshtml" />
+    <Content Include="Views\Grupo\GrupoListado.cshtml" />
+    <Content Include="Views\Grupo\ListadoInactivosGrupo.cshtml" />
+    <Content Include="Views\Grupo\InsertarGrupo.cshtml" />
+    <Content Include="Views\Grupo\modificarGrupo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

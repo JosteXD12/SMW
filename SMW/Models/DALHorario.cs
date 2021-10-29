@@ -15,14 +15,14 @@ public class DALHorario
 
         cmd.Connection = aux.conectar();
 
-        cmd.CommandText = "InsertarHorario";
+        cmd.CommandText = "InsertaHorario";
         cmd.CommandType = CommandType.StoredProcedure;
 
         cmd.Parameters.Add(new SqlParameter("@Horario_descripcion", elHorario.Horario_descripcion));
         cmd.Parameters.Add(new SqlParameter("@Horario_dia", elHorario.Horario_dia));
         cmd.Parameters.Add(new SqlParameter("@Horario_horainicio", elHorario.Horario_horainicio));
         cmd.Parameters.Add(new SqlParameter("@Horario_horafin", elHorario.Horario_horafin));
-        cmd.Parameters.Add(new SqlParameter("@Horario_estado", elHorario.Horario_estado));
+        cmd.Parameters.Add(new SqlParameter("@Horario_estado", 'A'));
 
         int x = cmd.ExecuteNonQuery();
         aux.conectar();
@@ -53,7 +53,7 @@ public class DALHorario
         cmd.Parameters.Add(new SqlParameter("@Horario_dia", elHorario.Horario_dia));
         cmd.Parameters.Add(new SqlParameter("@Horario_horainicio", elHorario.Horario_horainicio));
         cmd.Parameters.Add(new SqlParameter("@Horario_horafin", elHorario.Horario_horafin));
-        cmd.Parameters.Add(new SqlParameter("@Horario_estado", elHorario.Horario_estado));      
+        cmd.Parameters.Add(new SqlParameter("@Horario_estado", 'A'));      
 
         cmd.ExecuteNonQuery();
         aux.conectar();

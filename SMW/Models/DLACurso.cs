@@ -21,7 +21,7 @@ public class DLACurso
         cmd.Parameters.Add(new SqlParameter("@Curso_nombre", elCurso.Curso_nombre));
         cmd.Parameters.Add(new SqlParameter("@Curso_creditos", elCurso.Curso_creditos));
         cmd.Parameters.Add(new SqlParameter("@Curso_cupo", elCurso.Curso_cupo));
-        cmd.Parameters.Add(new SqlParameter("@Curso_estado", elCurso.Curso_Estado));
+        cmd.Parameters.Add(new SqlParameter("@Curso_estado", 'A'));
 
         int x = cmd.ExecuteNonQuery();
         aux.conectar();
@@ -36,7 +36,7 @@ public class DLACurso
         }
 
     }
-    public void ModificarProfesor(EntidadCurso elCurso)
+    public void ModificarCurso(EntidadCurso elCurso)
     {
         Conectividad aux = new Conectividad();
         SqlCommand cmd = new SqlCommand();
@@ -50,9 +50,9 @@ public class DLACurso
         cmd.Parameters.Add(new SqlParameter("@Curso_nombre", elCurso.Curso_nombre));
         cmd.Parameters.Add(new SqlParameter("@Curso_creditos", elCurso.Curso_creditos));
         cmd.Parameters.Add(new SqlParameter("@Curso_cupo", elCurso.Curso_cupo));
-        cmd.Parameters.Add(new SqlParameter("@Curso_estado", elCurso.Curso_Estado));
+        cmd.Parameters.Add(new SqlParameter("@Curso_estado", 'A'));
 
-        cmd.ExecuteNonQuery();
+        int x =cmd.ExecuteNonQuery();
         aux.conectar();
     }
     public Boolean EliminarCurso(int Curso_id)
@@ -132,7 +132,7 @@ public class DLACurso
         aux.conectar();
         return elCurso;
     }
-    public EntidadCurso ActivarProfesor(int Curso_id)
+    public EntidadCurso ActivarCurso(int Curso_id)
     {
         EntidadCurso elCurso = new EntidadCurso();
         Conectividad aux = new Conectividad();
@@ -140,7 +140,7 @@ public class DLACurso
 
         cmd.Connection = aux.conectar();
 
-        cmd.CommandText = "ActivarCuros";
+        cmd.CommandText = "ActivarCurso";
         cmd.CommandType = CommandType.StoredProcedure;
 
         cmd.Parameters.Add(new SqlParameter("@Curso_id", Curso_id));
@@ -170,7 +170,7 @@ public class DLACurso
 
         cmd.Connection = aux.conectar();
 
-        cmd.CommandText = "ListarCruso";
+        cmd.CommandText = "ListarCurso";
         cmd.CommandType = CommandType.StoredProcedure;
 
         SqlDataReader dr = cmd.ExecuteReader();

@@ -7,7 +7,7 @@ using System.Web;
 
 public class DALGrupo
 {
-    public Boolean insertarProfesor(EntidadGrupo elGrupo)
+    public Boolean insertarGrupo(EntidadGrupo elGrupo)
     {
         Conectividad aux = new Conectividad();
         SqlCommand cmd = new SqlCommand();
@@ -18,7 +18,7 @@ public class DALGrupo
         cmd.CommandType = CommandType.StoredProcedure;
 
         cmd.Parameters.Add(new SqlParameter("@Grupo_descripcion", elGrupo.Grupo_descripcion));
-        cmd.Parameters.Add(new SqlParameter("@Grupo_estado", elGrupo.Grupo_estado));
+        cmd.Parameters.Add(new SqlParameter("@Grupo_estado", 'A'));
 
         int x = cmd.ExecuteNonQuery();
         aux.conectar();
@@ -45,9 +45,9 @@ public class DALGrupo
 
         cmd.Parameters.Add(new SqlParameter("@Grupo_id", elGrupo.Grupo_id));
         cmd.Parameters.Add(new SqlParameter("@Grupo_descripcion", elGrupo.Grupo_descripcion));
-        cmd.Parameters.Add(new SqlParameter("@Grupo_estado", elGrupo.Grupo_estado));
+        cmd.Parameters.Add(new SqlParameter("@Grupo_estado",'A'));
 
-        cmd.ExecuteNonQuery();
+        int x =cmd.ExecuteNonQuery();
         aux.conectar();
     }
     public Boolean EliminarGrupo(int Grupo_id)
@@ -189,7 +189,7 @@ public class DALGrupo
 
         cmd.Connection = aux.conectar();
 
-        cmd.CommandText = "ListarInactivoProfesor";
+        cmd.CommandText = "ListarInactivoGrupo";
         cmd.CommandType = CommandType.StoredProcedure;
 
         SqlDataReader dr = cmd.ExecuteReader();
