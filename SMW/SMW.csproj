@@ -99,6 +99,8 @@
     <Compile Include="Controllers\EstudianteController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HorarioController.cs" />
+    <Compile Include="Controllers\MatriculaController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ProfesorController.cs" />
     <Compile Include="Models\DALEstudiante.cs" />
     <Compile Include="Models\DALGrupo.cs" />
@@ -147,6 +149,11 @@
     <Content Include="Views\Grupo\ListadoInactivosGrupo.cshtml" />
     <Content Include="Views\Grupo\InsertarGrupo.cshtml" />
     <Content Include="Views\Grupo\modificarGrupo.cshtml" />
+    <Content Include="Views\Menu\VistaMenu.cshtml" />
+    <Content Include="Views\Matricula\MatriculaLista.cshtml" />
+    <Content Include="Views\Matricula\ListadoInactivosmatricula.cshtml" />
+    <Content Include="Views\Matricula\InsertarMatricula.cshtml" />
+    <Content Include="Views\Matricula\modificarMatricula.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

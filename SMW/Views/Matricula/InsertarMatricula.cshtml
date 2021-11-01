@@ -1,0 +1,93 @@
+﻿@model EntidadMatricula
+
+@{
+    ViewBag.Title = "Inserción de Matricula";
+
+}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Estudiante_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.Estudiante_id, new SelectList(Model.Estudiante, "Estudiante_id", "Estudiante_cedula"), htmlAttributes: new { @class = "form-control", id = "country" })
+                @Html.ValidationMessageFor(model => model.Estudiante_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Profesor_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.Profesor_id, new SelectList(Model.Profesor, "Profesor_id", "Profesor_cedula"), htmlAttributes: new { @class = "form-control", id = "country" })
+                @Html.ValidationMessageFor(model => model.Profesor_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Curso_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.Curso_id, new SelectList(Model.Curso, "Curso_id", "Curso_nombre"), htmlAttributes: new { @class = "form-control", id = "country" })
+                @Html.ValidationMessageFor(model => model.Curso_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Grupo_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.Grupo_id, new SelectList(Model.Grupo, "Grupo_id", "Grupo_descripcion"), htmlAttributes: new { @class = "form-control", id = "country" })
+                @Html.ValidationMessageFor(model => model.Grupo_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Aula_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.Aula_id, new SelectList(Model.Aula, "Aula_id", "Aula_descripcion"), htmlAttributes: new { @class = "form-control", id = "country" })
+                @Html.ValidationMessageFor(model => model.Aula_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Horario_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.Horario_id, new SelectList(Model.Horario, "Horario_id", "Horario_descripcion"), htmlAttributes: new { @class = "form-control", id = "country" })
+                @Html.ValidationMessageFor(model => model.Horario_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Matricula_comprobante, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Matricula_comprobante, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Matricula_comprobante, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=" Insertar " class="btn btn-default" />
+
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Regresar al listado de matricula", "MatriculaLista")
+</div>
+
+
+

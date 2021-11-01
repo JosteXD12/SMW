@@ -8,7 +8,7 @@ using System.Web;
 
 public class DALMatricula
 {
-    public Boolean insertarProfesor(EntidadMatricula laMatricula)
+    public Boolean insertarMatricula(EntidadMatricula laMatricula)
     {
         Conectividad aux = new Conectividad();
         SqlCommand cmd = new SqlCommand();
@@ -25,7 +25,7 @@ public class DALMatricula
         cmd.Parameters.Add(new SqlParameter("@Horario_id", laMatricula.Horario_id));
         cmd.Parameters.Add(new SqlParameter("@Aula_id", laMatricula.Aula_id));
         cmd.Parameters.Add(new SqlParameter("@Matricula_comprobante", laMatricula.Matricula_comprobante));
-        cmd.Parameters.Add(new SqlParameter("@Matricula_estado", laMatricula.Matricula_estado));
+        cmd.Parameters.Add(new SqlParameter("@Matricula_estado", 'A'));
 
         int x = cmd.ExecuteNonQuery();
         aux.conectar();
@@ -58,9 +58,9 @@ public class DALMatricula
         cmd.Parameters.Add(new SqlParameter("@Horario_id", laMatricula.Horario_id));
         cmd.Parameters.Add(new SqlParameter("@Aula_id", laMatricula.Aula_id));
         cmd.Parameters.Add(new SqlParameter("@Matricula_comprobante", laMatricula.Matricula_comprobante));
-        cmd.Parameters.Add(new SqlParameter("@Matricula_estado", laMatricula.Matricula_estado));
+        cmd.Parameters.Add(new SqlParameter("@Matricula_estado", 'A'));
 
-        cmd.ExecuteNonQuery();
+        int x = cmd.ExecuteNonQuery();
         aux.conectar();
     }
     public Boolean EliminarMatricula(int Matricula_id)
@@ -222,7 +222,7 @@ public class DALMatricula
 
         cmd.Connection = aux.conectar();
 
-        cmd.CommandText = "ListarInactivoProfesor";
+        cmd.CommandText = "ListarInactivoMatricula";
         cmd.CommandType = CommandType.StoredProcedure;
 
         SqlDataReader dr = cmd.ExecuteReader();

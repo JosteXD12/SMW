@@ -123,7 +123,6 @@ namespace SMW.Controllers
             ModelState.Clear();
             ObjProfesor.ActivarProfesor(Profesor_id);
             return RedirectToAction("ListadoInactivosProfesor");
-           
         }
 
 

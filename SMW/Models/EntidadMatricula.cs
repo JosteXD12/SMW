@@ -41,4 +41,16 @@ public class EntidadMatricula
 
     [Display(Name = " Estado ")]
     public string Matricula_estado { get; set; }
+
+    public List<EntidadProfesor> Profesor { get; set; }
+
+    public List<EntidadEstudiante> Estudiante { get; set; }
+
+    public List<EntidadCurso> Curso { get; set; }
+
+    public List<EntidadGrupo> Grupo { get; set; }
+
+    public List<EntidadAula> Aula { get; set; }
+
+    public List<EntidadHorario> Horario { get; set; }
 }

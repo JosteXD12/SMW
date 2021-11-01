@@ -7,6 +7,7 @@ using System.Web;
 
 public class EntidadEstudiante
 {
+   
     public int Estudiante_id { get; set; }
 
     [Display(Name = "Gurpo_id")]
@@ -44,5 +45,7 @@ public class EntidadEstudiante
 
     [Display(Name = " Estado ")]
     public string Estudiante_estado { get; set; }
+
+    public List<EntidadGrupo> Grupo { get; set; }
 
 }

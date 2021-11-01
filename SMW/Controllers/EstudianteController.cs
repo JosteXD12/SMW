@@ -19,6 +19,8 @@ namespace SMW.Controllers
         }
         public ActionResult InsertarEstudiante(EntidadEstudiante Estudiante)
         {
+            List<EntidadGrupo> grupo = (new DALGrupo()).ListarGrupo();
+            EntidadEstudiante cbxGrupo = new EntidadEstudiante { Grupo = grupo };
             try
             {
                 if (ModelState.IsValid)
@@ -34,7 +36,7 @@ namespace SMW.Controllers
                         ViewBag.Mensaje = "Error en el inreso del Estudiante";
                     }
                 }
-                return View();
+                return View(cbxGrupo);
             }
             catch (Exception ex)
             {
@@ -45,8 +47,10 @@ namespace SMW.Controllers
         public ActionResult modificarEstudiante(int Estudiante_id)
         {
             DALEstudiante ObjEstudiante = new DALEstudiante();
-
-            return View(ObjEstudiante.ListarEstudiante().Find(est => est.Estudiante_id == Estudiante_id));
+            List<EntidadGrupo> grupo = (new DALGrupo()).ListarGrupo();
+            EntidadEstudiante cbxGrupo = ObjEstudiante.ListarEstudiante().Find(est => est.Estudiante_id == Estudiante_id);
+            cbxGrupo.Grupo = grupo;
+            return View(cbxGrupo);
         }
 
         [HttpPost]
