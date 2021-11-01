@@ -107,7 +107,7 @@ namespace SMW.Controllers
             }
             catch
             {
-                return View();
+                return RedirectToAction("EstudianteListado");
             }
 
         }

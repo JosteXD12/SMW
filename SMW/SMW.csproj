@@ -111,6 +111,7 @@
     <Compile Include="Models\DALHorario.cs" />
     <Compile Include="Models\DALMatricula.cs" />
     <Compile Include="Models\DALProfesor.cs" />
+    <Compile Include="Models\DALUsuario.cs" />
     <Compile Include="Models\DLAAula.cs" />
     <Compile Include="Models\DLACurso.cs" />
     <Compile Include="Models\EntidadAula.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Models\EntidadHorario.cs" />
     <Compile Include="Models\EntidadMatricula.cs" />
     <Compile Include="Models\EntidadProfesor.cs" />
+    <Compile Include="Models\EntidadUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +156,7 @@
     <Content Include="Views\Matricula\ListadoInactivosmatricula.cshtml" />
     <Content Include="Views\Matricula\InsertarMatricula.cshtml" />
     <Content Include="Views\Matricula\modificarMatricula.cshtml" />
+    <Content Include="Views\Menu\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

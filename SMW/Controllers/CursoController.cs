@@ -78,9 +78,9 @@ namespace SMW.Controllers
             }
             catch
             {
-                return View();
-            }
+                return RedirectToAction("CursoListado");
 
+            }
         }
         public ActionResult eliminarAdminEstudiante(int Curso_id)
         {
@@ -102,7 +102,7 @@ namespace SMW.Controllers
             }
             catch
             {
-                return View();
+                return RedirectToAction("CursoListado");
             }
 
         }

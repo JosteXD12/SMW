@@ -85,7 +85,7 @@ public class DLACurso
 
         cmd.Connection = aux.conectar();
 
-        cmd.CommandText = "InactivarProfesor";
+        cmd.CommandText = "InactivarCurso";
         cmd.CommandType = CommandType.StoredProcedure;
 
         cmd.Parameters.Add(new SqlParameter("@Curso_id", Curso_id));
