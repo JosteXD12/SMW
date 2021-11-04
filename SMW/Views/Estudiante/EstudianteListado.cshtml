@@ -54,45 +54,46 @@
                             </thead>
                             @foreach (var item in Model)
                             {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Grupo_id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estudiante_cedula)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estudiante_nombre)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estudiante_primerApellido)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estudiante_segundoApellido)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estudiante_telefono)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estudiante_correoElectronico)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estudiante_dirreccion)
-                            </td>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Grupo_id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estudiante_cedula)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estudiante_nombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estudiante_primerApellido)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estudiante_segundoApellido)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estudiante_telefono)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estudiante_correoElectronico)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estudiante_dirreccion)
+                                    </td>
 
 
-                            <td>
-                                @Html.ActionLink("Modificar", "modificarEstudiante", new { Estudiante_id = item.Estudiante_id }) |
-                                @Html.ActionLink("Eliminar", "eliminarEstudiante", new { Estudiante_id = item.Estudiante_id },
-                                                new { onclick = "return confirm('Está seguro de borrar este Profesor?');" })
-                            </td>
-                        </tr>
+                                    <td>
+                                        @Html.ActionLink("Modificar", "modificarEstudiante", new { Estudiante_id = item.Estudiante_id }) |
+                                        @Html.ActionLink("Eliminar", "eliminarEstudiante", new { Estudiante_id = item.Estudiante_id },
+                                                        new { onclick = "return confirm('Está seguro de borrar este Profesor?');" })
+                                    </td>
+                                </tr>
 
                             }
                         </table>
                         <span>
                             @Html.ActionLink("Insertar estudiante", "InsertarEstudiante", "Estudiante", null, new { @class = "btn btn-primary btn-large" })
-                            @Html.ActionLink("Admistrador", "ListadoInactivosEstudiante", "Estudiante", null, new { @class = "btn btn-primary btn-large" })
+                            @Html.ActionLink("Admistrador", "ListadoInactivosEstudiante", "Estudiante", null, new { @class = "btn btn-primary btn-large" }disabled = "disabled")
+
                         </span>
                     </fieldset>
                 </div>

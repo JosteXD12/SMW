@@ -48,4 +48,6 @@ public class EntidadEstudiante
 
     public List<EntidadGrupo> Grupo { get; set; }
 
+    public List<EntidadUsuario> User { get; set; }
+
 }
