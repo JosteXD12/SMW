@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace SMW.Controllers
 {
+    [Authorize]
     public class ProfesorController : Controller
     {
         // GET: Profesor

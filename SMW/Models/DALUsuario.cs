@@ -8,29 +8,34 @@ using System.Web;
 
 public class DALUsuario
 {
-    public Boolean login(string nick, string contrasenia)
+    public EntidadUsuario login(string nick, string contrasenia)
     {
+        EntidadUsuario elUsuario = new EntidadUsuario();
         Conectividad aux = new Conectividad();
-        SqlCommand cmd = new SqlCommand("UsuarioLogin");
+        SqlCommand cmd = new SqlCommand();
 
         cmd.Connection = aux.conectar();
 
+        cmd.CommandText = "UsuarioLogin";
         cmd.CommandType = CommandType.StoredProcedure;
-        cmd.Parameters.AddWithValue("@nick", nick);
-        cmd.Parameters.AddWithValue("@contrasenia", contrasenia);
 
+        cmd.Parameters.Add(new SqlParameter("@nick", nick));
+        cmd.Parameters.Add(new SqlParameter("@contrasenia", contrasenia));
         SqlDataReader dr = cmd.ExecuteReader();
 
         if (dr.Read())
         {
-            aux.conectar();
-            return true;
+            elUsuario.Usuario_nick = dr["Usuario_nombre"].ToString();
+            elUsuario.Usuario_Area =dr["Usuario_area"].ToString();
+        
+
         }
         else
         {
-            return false;
+            elUsuario = null;
         }
-        
-        
+        aux.conectar();
+        return elUsuario;
+
     }
 }
