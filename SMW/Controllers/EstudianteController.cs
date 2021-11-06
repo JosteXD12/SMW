@@ -8,6 +8,21 @@ namespace SMW.Controllers
 {
     public class EstudianteController : Controller
     {
+
+        EntidadEstudiante contetxto = new EntidadEstudiante();
+        public ActionResult ReporteParametrisado()
+        {
+            return View();
+        }
+
+        public JsonResult getCedula()
+        {
+            var cd = contetxto.Estudiante_cedula.Select(x => x).ToList();
+
+            return Json(new { resultado = cd },JsonRequestBehavior.AllowGet );
+        }
+
+
         // GET: Estudiante
         public ActionResult EstudianteListado()
         {

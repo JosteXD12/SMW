@@ -46,6 +46,8 @@ public class EntidadEstudiante
     [Display(Name = " Estado ")]
     public string Estudiante_estado { get; set; }
 
+    public List<EntidadEstudiante> Estudiante { get; set; }
+
     public List<EntidadGrupo> Grupo { get; set; }
 
     public List<EntidadUsuario> User { get; set; }
