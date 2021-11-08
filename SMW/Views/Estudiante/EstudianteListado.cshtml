@@ -92,13 +92,7 @@
                         </table>
                         <span>
                             @Html.ActionLink("Insertar estudiante", "InsertarEstudiante", "Estudiante", null, new { @class = "btn btn-primary btn-large" })
-                            @{
-
-
-                                @Html.ActionLink("Admistrador", "ListadoInactivosEstudiante", "Estudiante", null, new { @class = "btn btn-primary btn-large" })
-
-                            }
-                            @Html.ActionLink("Admistrador", "ListadoInactivosEstudiante", "Estudiante", null, new { @class = "btn btn-primary btn-large" })
+                            @Html.ActionLink("Panel Admistrador", "ListadoInactivosEstudiante", "Estudiante", null, new { @class = "btn btn-primary btn-large" })
 
                             @Html.ActionLink(" Volver al menu", "VistaMenu", "Menu", null, new { @class = "btn btn-primary btn-large" })
 
